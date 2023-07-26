@@ -10,14 +10,23 @@ fetch('/products', {
     body: "name=Caribbean+Delight+Coffee&description=Made+by+Manatee+Coffee&price=11%2E99&categories=grocery",
     headers: {
         "Content-Type": "application/x-www-urlformencoded"    }
-})
+});
 
 
 
 /* ============================== Phase 2 ============================== */
 
-// Your code here
-
+fetch('/products', {
+    method: "POST",
+    body: "name=Caribbean+Delight+Coffee&description=Made+by+Manatee+Coffee&price=11%2E99&categories=grocery",
+    headers: {
+        "Content-Type": "application/x-www-urlformencoded"    }
+})
+.then((res) => JSON.parse(res))
+.then((res) => console.log(res.statusCode))
+.then((res) => console.log(res.headers['Content-Type']))
+.then((res) => console.log(res.url))
+.then((res) => console.log(res.redirected))
 
 
 /* ============================== Phase 3 ============================== */
